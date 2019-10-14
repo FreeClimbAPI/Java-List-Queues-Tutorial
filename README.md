@@ -10,13 +10,7 @@ To get started using a persephony account, follow the instructions [here](https:
 
 ## Setting up the Tutorial
 
-1. Install the node packages necessary using command:
-
-   ```bash
-   $ yarn install
-   ```
-
-2. Configure environment variables.
+1. Configure environment variables.
 
    | ENV VARIABLE            | DESCRIPTION                                                                                                                                                                             |
    | ----------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
