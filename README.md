@@ -1,4 +1,4 @@
-# Node - List Queues Tutorial
+# Java - List Queues Tutorial
 
 This project serves as a guide to help you build an application with Persephony. Specifically, the project will:
 
