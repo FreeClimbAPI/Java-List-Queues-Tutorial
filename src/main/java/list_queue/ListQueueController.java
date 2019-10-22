@@ -18,11 +18,11 @@
 
 package main.java.list_queue;
 
-import com.vailsys.persephony.api.PersyClient;
-import com.vailsys.persephony.api.PersyException;
-import com.vailsys.persephony.api.queue.Queue;
-import com.vailsys.persephony.api.queue.QueueList;
-import com.vailsys.persephony.api.queue.QueuesSearchFilters;
+import com.vailsys.freeclimb.api.FreeClimbClient;
+import com.vailsys.freeclimb.api.FreeClimbException;
+import com.vailsys.freeclimb.api.queue.Queue;
+import com.vailsys.freeclimb.api.queue.QueueList;
+import com.vailsys.freeclimb.api.queue.QueuesSearchFilters;
 import org.springframework.web.bind.annotation.RestController;
 
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -41,7 +41,7 @@ public class ListQueueController {
     filters.setAlias("Tutorial Queue");
 
     try {
-      PersyClient client = new PersyClient(accountId, authToken); // Create PersyClient object
+      FreeClimbClient client = new FreeClimbClient(accountId, authToken); // Create FreeClimbClient object
 
       // Invoke get method to retrieve the first page of queues with a matching alias
       QueueList queueList = client.queues.get(filters);
@@ -61,7 +61,7 @@ public class ListQueueController {
         }
         return queues;
       }
-    } catch (PersyException pe) {
+    } catch (FreeClimbException pe) {
       System.out.println(pe.getMessage());
     }
 
