@@ -31,9 +31,9 @@ import java.util.ArrayList;
 
 @RestController
 public class ListQueueController {
-  // Get accountID and authToken from environment variables
+  // Get accountID and apiKey from environment variables
   private String accountId = System.getenv("ACCOUNT_ID");
-  private String authToken = System.getenv("AUTH_TOKEN");
+  private String apiKey = System.getenv("API_KEY");
 
   @RequestMapping("/queues")
   public ArrayList<Queue> listQueues() {
@@ -41,7 +41,7 @@ public class ListQueueController {
     filters.setAlias("Tutorial Queue");
 
     try {
-      FreeClimbClient client = new FreeClimbClient(accountId, authToken); // Create FreeClimbClient object
+      FreeClimbClient client = new FreeClimbClient(accountId, apiKey); // Create FreeClimbClient object
 
       // Invoke get method to retrieve the first page of queues with a matching alias
       QueueList queueList = client.queues.get(filters);
